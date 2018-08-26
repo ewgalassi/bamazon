@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS bamazon_db;
 CREATE DATABASE bamazon_db;
 
 USE bamazon_db;
@@ -25,3 +26,5 @@ VALUES ("hammer", "tools", 7.50, 150),
     ("lawn gnome", "outdoor decor", 27.80, 649);
     
 SELECT * FROM products;
+
+/*UPDATE products SET stock_quantity = 205 WHERE product_name = "screwdriver";*/

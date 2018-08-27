@@ -33,3 +33,6 @@ The prompts in the program will provide you with selections or ask for inputs.  
 <p align='center'>
 <img width='600' src='assets/manager.gif'>
 </p>
+
+### If you have any difficulty
+Please contact me.  I maintain my repositories regularly, so I will try to work out any bugs you encounter.

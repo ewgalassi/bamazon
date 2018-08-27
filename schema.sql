@@ -25,6 +25,8 @@ VALUES ("hammer", "tools", 7.50, 150),
     ("plastic flamingo", "outdoor decor", 8.95, 250),
     ("lawn gnome", "outdoor decor", 27.80, 649);
     
-SELECT * FROM products;
+/*SELECT * FROM products;
 
-/*UPDATE products SET stock_quantity = 205 WHERE product_name = "screwdriver";*/
+SELECT * FROM products WHERE stock_quantity < 50;
+
+UPDATE products SET stock_quantity = 180 WHERE item_id = 7;*/

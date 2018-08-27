@@ -26,7 +26,7 @@ The prompts in the program will provide you with selections or ask for inputs.  
 
 ## Example of using bamazonCustomer.js
 <p align='center'>
-<img width='600' src='images/customer.gif'>
+<img width='600' src='assets/customer.gif'>
 </p>
 
 ## Example of using bamazonManager.js

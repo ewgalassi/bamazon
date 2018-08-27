@@ -47,7 +47,7 @@ function introInquire() {
                 newItem();
                 break;
             case "Exit":
-                console.log("\nThank you for using bamazonManager! Have a great day!\n");
+                console.log(chalk.blue("\nThank you for using bamazonManager! Have a great day!\n"));
                 connection.end();
             default:
                 break;
@@ -59,7 +59,7 @@ function introDisplay() {
     var query = "SELECT * FROM products";
     connection.query(query, function (err, res) {
         if (err) throw err;
-        console.log("\nHere is the current inventory, unless rats got into the store again.\n")
+        console.log(chalk.yellow("\nHere is the current inventory, unless rats got into the store again.\n"));
         console.table(res);
         introInquire();
     });
@@ -69,11 +69,8 @@ function lowDisplay() {
     var query = "SELECT * FROM products WHERE stock_quantity < 5";
     connection.query(query, function (err, res) {
         if (err) throw err;
-        console.log("\nHere are the items that are running low on inventory.\n")
-        // console.table(result, ["ID", "Product", "Department", "Price", "In Stock"]);
-        for (item in res) {
-            console.log(res[item].item_id + " | " + res[item].product_name + " | " + res[item].department_name + " | " + res[item].price + " | " + res[item].stock_quantity + "\n");
-        };
+        console.log(chalk.yellow("\nHere are the items that are running low on inventory.\n"));
+        console.table(res);
         introInquire();
     });
 };
@@ -92,7 +89,7 @@ function addInvent() {
         }
     ]).then(function(response) {
         if (isNaN(response.quantity) || parseInt(response.quantity) <= 0) {
-            console.log("\nPlease enter a number greater than zero.\n");
+            console.log(chalk.red("\nPlease enter a number greater than zero.\n"));
             addInvent();
         }
         else {
@@ -100,7 +97,7 @@ function addInvent() {
             barCode = itemList.indexOf(selected) + 1;
             initialQuant = quantList[barCode - 1];
             var amount = parseInt(response.quantity);
-            console.log("\nInventory purchased!\n");
+            console.log(chalk.green("\nInventory purchased!\n"));
             var query = "UPDATE products SET ? WHERE ?";
             connection.query(query, [
                 {stock_quantity: initialQuant + amount}, 
@@ -136,7 +133,7 @@ function newItem() {
         }
     ]).then(function(response) {
         if (isNaN(response.price) || isNaN(response.initInvent) || parseInt(response.price) <= 0 || parseInt(response.initInvent) <= 0) {
-            console.log("\nPlease enter a number greater than zero for price and quantity.\n");
+            console.log(chalk.red("\nPlease enter a number greater than zero for price and quantity.\n"));
             newItem();
         }
         else {
@@ -153,7 +150,7 @@ function newItem() {
                     stock_quantity: stockAmount
                 }
             ], function (err, res) {
-                console.log("\nNew products added!\n")
+                console.log(chalk.green("\nNew products added!\n"));
                 itemList = [];
                 quantList = [];
                 if (err) throw err;

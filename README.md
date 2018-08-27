@@ -4,22 +4,22 @@ This app has two programs: a customer program and a manager program.  The custom
 
 ## How to install it
 Here is how you get started:
-``
+```
 git clone git@github.com:ewgalassi/bamazon.git
 cd bamazon
 npm init -y
 npm install
-``
+```
 
 Next you will need to setup your MySQL server and run the `schema.sql` file commands (that are not commented out).
 Then, depending on which program you would like to run:
-`
+```
 node bamazonCustomer.js
-`
+```
 or
-`
+```
 node bamazonManager.js
-`
+```
 
 ### How to use it
 The prompts in the program will provide you with selections or ask for inputs.  Just make sure you use numbers where necessary or the program will ask you to try again.

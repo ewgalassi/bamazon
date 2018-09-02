@@ -1,6 +1,6 @@
 # bamazon
 
-This app has two programs: a customer program and a manager program.  The customer program is for someone who wants to purchase an item from the store.  The manager program is for maintaining the inventory of items and adding new products to sell.
+This app has two programs: a customer program and a manager program.  The customer program is for someone who wants to purchase an item from the store.  The manager program is for maintaining the inventory of items and adding new products to sell.  The languages used are JavaScript, node.js, and MySQL.
 
 ## How to install it
 Here is how you get started:
